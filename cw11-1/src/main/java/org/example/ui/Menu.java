@@ -1,6 +1,8 @@
 package org.example.ui;
 
+import org.example.entity.Admin;
 import org.example.entity.User;
+import org.example.service.AdminService;
 import org.example.service.UserService;
 import org.example.util.ApplicationContext;
 import org.example.util.Constant;
@@ -11,6 +13,7 @@ import java.util.Scanner;
 
 public class Menu {
     private static final UserService userService = ApplicationContext.getUserService();
+    private static final AdminService adminService = ApplicationContext.getAdminService();
 
     public static void run(){
 
@@ -19,12 +22,45 @@ public class Menu {
             Printer.printMsg(Constant.CHOOSE_ITEM, false);
             switch (new Scanner(System.in).next().trim()) {
                 case "1" -> loginMenu();
-                case "2" -> signupMenu();
-                case "3" -> System.exit(0);
+                case "2" -> adminLogin();
+                case "3" -> signupMenu();
+                case "4" -> System.exit(0);
                 default -> Printer.printWarning(Constant.ITEM_NOT_FOUND);
             }
         }
     }
+
+    private static void adminLogin() {
+        String username;
+        String password;
+        boolean condition = true;
+        while (true){
+            Printer.printMsg(Constant.ENTER_USERNAME, false);
+            username = new Scanner(System.in).next();
+            if (username.equals(Constant.BREAK)) break;
+
+            Printer.printMsg(Constant.ENTER_PASSWORD, false);
+            password = new Scanner(System.in).next();
+            if (password.equals(Constant.BREAK)) break;
+
+            String[] credential = new String[2];
+            credential[0] = username;
+            credential[1] = password;
+            try {
+                Admin resultSet = adminService.checkCredentialInfoForLogin(credential[0], credential[1]);
+                setSecurityContextForAdmin(resultSet);
+//                dashboardMenu();
+            }catch (ArrayIndexOutOfBoundsException e){
+                Printer.printWarning(Constant.BAD_ENTRY_FORMAT);
+            }
+            catch (Throwable e){
+                Printer.printWarning(e.getClass().getSimpleName() + ": " + e.getMessage());
+            }
+            break;
+        }
+
+    }
+
     private static void signupMenu() {
         Scanner scanner=new Scanner(System.in);
         Printer.printMsg(Constant.ENTER_SIGNUP_INFO, true);
@@ -90,4 +126,10 @@ public class Menu {
         SecurityContext.name = resultSet.getName();
         SecurityContext.username = resultSet.getUsername();
     }
+
+    private static void setSecurityContextForAdmin(Admin resultSet) {
+        SecurityContext.id = resultSet.getId();
+        SecurityContext.username = resultSet.getUsername();
+    }
+
 }

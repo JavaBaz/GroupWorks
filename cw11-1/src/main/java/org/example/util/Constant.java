@@ -24,7 +24,7 @@ public class Constant {
 
     public static final String DELETE_ID = "please enter you id: ";
 
-    public static final String [] FIRST_MENU={"LOGIN","SIGN UP","EXIT"};
+    public static final String [] FIRST_MENU={"LOGIN","ADMIN","SIGN UP","EXIT"};
     public static final String [] DASHBOARD_MENU= {"MY PROFILE","UPDATE PROFILE","DELETE ACCOUNT","SIGN OUT"};
 
 }

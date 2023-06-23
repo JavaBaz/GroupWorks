@@ -1,7 +1,9 @@
 package org.example.repository.impl;
 
 import org.example.base.repository.impl.BaseRepositoryImpl;
+import org.example.config.MyConnection;
 import org.example.entity.Admin;
+import org.example.entity.User;
 import org.example.repository.AdminRepository;
 
 import java.sql.PreparedStatement;
@@ -43,5 +45,21 @@ public class AdminRepositoryImpl
 
         preparedStatement.setString(1,entity.getUsername());
         preparedStatement.setString(2,entity.getPassword());
+    }
+
+    @Override
+    public Admin findUserByUsername(String userName) throws SQLException {
+        String sql = "SELECT * FROM "+ getTableName() + " WHERE username = ? ";
+        try(PreparedStatement preparedStatement = new MyConnection().getConnection().prepareStatement(sql)){
+            preparedStatement.setString(1, userName);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next())
+                return new Admin(
+                        resultSet.getInt(1),
+                        resultSet.getString(2),
+                        resultSet.getString(3));
+
+        }
+        return null;
     }
 }
