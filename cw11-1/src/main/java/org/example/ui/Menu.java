@@ -31,7 +31,7 @@ public class Menu {
         Printer.printMsg(Constant.ENTER_FIRST_NAME,false);
         String name=scanner.next();
         String username=validateUsername(scanner);
-        String password= validatePassword(scanner);
+        String password= scanner.next();
         try {
             userService.save(new User(name,username,password));
             Printer.printMsg(Constant.REGISTRATION_SUCCESS,true);
@@ -56,19 +56,6 @@ public class Menu {
         return username;
     }
 
-    private static String validatePassword(Scanner scanner){
-        String password;
-        while(true){
-            Printer.printMsg(Constant.ENTER_PASSWORD, false);
-            password = scanner.next();
-            try {
-                if (!userService.isExistPassWord(password)) break;
-            } catch (Throwable e) {
-                Printer.printWarning(e.getMessage());
-            }
-        }
-        return password;
-    }
 
     public static void loginMenu(){
         String username;

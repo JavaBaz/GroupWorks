@@ -3,7 +3,6 @@ package org.example.repository.impl;
 import org.example.base.repository.impl.BaseRepositoryImpl;
 import org.example.config.MyConnection;
 import org.example.entity.User;
-import org.example.exception.PasswordExistException;
 import org.example.exception.UsernameExistException;
 import org.example.repository.UserRepository;
 import org.example.util.Constant;
@@ -63,17 +62,7 @@ public class UserRepositoryImpl
         return false;
     }
 
-    @Override
-    public boolean isExistPassWord(String passWord) throws SQLException, PasswordExistException {
-        String sql = "SELECT password FROM " + getTableName() + " WHERE password = ? ";
-        try(PreparedStatement preparedStatement = new MyConnection().getConnection().prepareStatement(sql)){
-            preparedStatement.setString(1, passWord);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next())
-                throw new PasswordExistException(Constant.passWord_EXISt);
-        }
-        return false;
-    }
+
 
     public User findUserByUsername(String userName) throws SQLException{
         String sql = "SELECT * FROM "+ getTableName() + " WHERE username = ? ";
