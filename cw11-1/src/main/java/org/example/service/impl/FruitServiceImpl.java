@@ -18,10 +18,6 @@ public class FruitServiceImpl
         super(repository);
     }
 
-    @Override
-    public void save(Fruit fruit) throws SQLException {
-        repository.save(fruit);
-    }
 
     @Override
     public void delete(Integer integer) throws SQLException {
