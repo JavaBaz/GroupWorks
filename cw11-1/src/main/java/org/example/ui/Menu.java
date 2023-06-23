@@ -1,8 +1,7 @@
 package org.example.ui;
 
-import org.example.base.repository.BaseRepository;
 import org.example.entity.User;
-import org.example.service.user.UserService;
+import org.example.service.UserService;
 import org.example.util.ApplicationContext;
 import org.example.util.Constant;
 import org.example.util.SecurityContext;

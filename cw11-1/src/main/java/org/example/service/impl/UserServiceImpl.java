@@ -1,4 +1,4 @@
-package org.example.service.user.impl;
+package org.example.service.impl;
 
 import org.example.base.service.impl.BaseServiceImpl;
 import org.example.entity.User;
@@ -6,7 +6,7 @@ import org.example.exception.BadCredentialException;
 import org.example.exception.PasswordExistException;
 import org.example.exception.UserNotFoundException;
 import org.example.repository.UserRepository;
-import org.example.service.user.UserService;
+import org.example.service.UserService;
 import org.example.util.Constant;
 
 import java.sql.SQLException;

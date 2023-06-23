@@ -3,8 +3,8 @@ package org.example.util;
 import org.example.config.MyConnection;
 import org.example.repository.UserRepository;
 import org.example.repository.impl.UserRepositoryImpl;
-import org.example.service.user.UserService;
-import org.example.service.user.impl.UserServiceImpl;
+import org.example.service.UserService;
+import org.example.service.impl.UserServiceImpl;
 
 import java.sql.Connection;
 
