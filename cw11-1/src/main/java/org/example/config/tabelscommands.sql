@@ -1,30 +1,39 @@
-create table user_table
+CREATE DATABASE cw11;
+
+
+CREATE TABLE user_table
 (
-    id          serial primary key,
-    name        varchar(50) not null,
-    username    varchar(50) not null unique ,
-    password    varchar(50) not null
+    id          SERIAL PRIMARY KEY,
+    name        VARCHAR(50) NOT NULL,
+    username    VARCHAR(50) NOT NULL UNIQUE ,
+    password    VARCHAR(50) NOT NULL
 );
-create table admin_table
+
+
+CREATE TABLE admin_table
 (
-    id          serial primary key,
-    username    varchar(50) not null unique ,
-    password    varchar(50) not null
+    id            serial primary key,
+    username      varchar(50) not null unique ,
+    password      varchar(50) not null
 );
-create table fruit_table
+
+
+CREATE TABLE fruit_table
 (
-    id         serial primary key,
-    name       varchar(50) not null,
-    description varchar(150) not null,
-    existence  boolean not null,
-    inventory  int    not null,
-    price      int    not null
+    id            SERIAL PRIMARY KEY,
+    name          VARCHAR(50) NOT NULL,
+    description   VARCHAR(150) NOT NULL,
+    existence     BOOLEAN NOT NULL,
+    inventory     INT    NOT NULL,
+    price         INT    NOT NULL
 );
-create table order_table
+
+
+CREATE TABLE order_table
 (
-    id     serial primary key,
-    user_id int references user_table (id) not null ,
-    fruit_id int references fruit_table (id) not null ,
-    status varchar(50) not null,
-    amount int not null
+    id           SERIAL PRIMARY KEY,
+    user_id      int references user_table (id) not null ,
+    fruit_id     int references fruit_table (id) not null ,
+    status       varchar(50) not null,
+    amount       int not null
 );
