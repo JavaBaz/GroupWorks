@@ -32,8 +32,8 @@ public class UserServiceImpl
     public User checkCredentialInfoForLogin(String userName, String passWord) throws Exception {
         User resultSet = repository.findUserByUsername(userName);
         if (resultSet != null){
-            if (userName.equals(resultSet.getUserName()) &&
-                    passWord.equals(resultSet.getPassWord()))
+            if (userName.equals(resultSet.getUsername()) &&
+                    passWord.equals(resultSet.getPassword()))
                 return resultSet;
             else
                 throw new BadCredentialException(Constant.BAD_CREDENTIAL);

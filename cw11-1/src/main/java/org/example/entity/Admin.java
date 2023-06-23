@@ -7,9 +7,9 @@ public class Admin extends BaseEntity<Integer> {
 
     private String password;
 
-    public Admin(String userName, String passWord) {
-        this.username = userName;
-        this.password = passWord;
+    public Admin(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
     public Admin(Integer integer, String username, String password) {

@@ -47,8 +47,8 @@ public class UserRepositoryImpl
     @Override
     public void fillParamForStatement(PreparedStatement preparedStatement, User entity) throws SQLException {
         preparedStatement.setString(1, entity.getName());
-        preparedStatement.setString(2, entity.getUserName());
-        preparedStatement.setString(3, entity.getPassWord());
+        preparedStatement.setString(2, entity.getUsername());
+        preparedStatement.setString(3, entity.getPassword());
     }
 
     @Override

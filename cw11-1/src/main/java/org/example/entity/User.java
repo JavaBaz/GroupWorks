@@ -5,22 +5,20 @@ import org.example.base.entity.BaseEntity;
 public class User extends BaseEntity<Integer> {
 
     private String name;
+    private String username;
+    private String password;
 
-    private String userName;
-
-    private String passWord;
-
-    public User(String name, String userName, String passWord) {
+    public User(String name, String username, String password) {
         this.name = name;
-        this.userName = userName;
-        this.passWord = passWord;
+        this.username = username;
+        this.password = password;
     }
 
     public User(Integer integer, String name, String userName, String passWord) {
         super(integer);
         this.name = name;
-        this.userName = userName;
-        this.passWord = passWord;
+        this.username = userName;
+        this.password = passWord;
     }
 
     public String getName() {
@@ -31,28 +29,28 @@ public class User extends BaseEntity<Integer> {
         this.name = name;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
-                ", userName='" + userName + '\'' +
-                ", passWord='" + passWord + '\'' +
+                ", userName='" + username + '\'' +
+                ", passWord='" + password + '\'' +
                 ", id=" + id +
                 '}';
     }
