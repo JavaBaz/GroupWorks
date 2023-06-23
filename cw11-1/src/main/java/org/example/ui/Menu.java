@@ -17,19 +17,11 @@ public class Menu {
         while (true){
             Printer.printMenu(Constant.FIRST_MENU, Constant.WELCOME);
             Printer.printMsg(Constant.CHOOSE_ITEM, false);
-            switch (new Scanner(System.in).next().trim()){
-                case "1":
-                    loginMenu();
-                    break;
-                case "2":
-                    signupMenu();
-                    break;
-                case "3":
-                    System.exit(0);
-                    break;
-                default:
-                    Printer.printWarning(Constant.ITEM_NOT_FOUND);
-                    break;
+            switch (new Scanner(System.in).next().trim()) {
+                case "1" -> loginMenu();
+                case "2" -> signupMenu();
+                case "3" -> System.exit(0);
+                default -> Printer.printWarning(Constant.ITEM_NOT_FOUND);
             }
         }
     }
@@ -109,7 +101,11 @@ public class Menu {
     private static void setSecurityContext(User resultSet) {
         SecurityContext.id = resultSet.getId();
         SecurityContext.name = resultSet.getName();
-        SecurityContext.username = resultSet.getUserName();
-        SecurityContext.passWord = resultSet.getPassWord();
+        SecurityContext.username = resultSet.getUsername();
+
+
+        SecurityContext.accessLevel =
+
+
     }
 }
