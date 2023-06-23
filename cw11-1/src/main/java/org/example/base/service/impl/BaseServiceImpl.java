@@ -7,7 +7,8 @@ import org.example.base.service.BaseService;
 import java.io.Serializable;
 import java.sql.SQLException;
 
-public class BaseServiceImpl <ID extends Serializable, TYPE extends BaseEntity<ID>,
+public class BaseServiceImpl <ID extends Serializable,
+        TYPE extends BaseEntity<ID>,
         R extends BaseRepository<ID, TYPE>>
         implements BaseService<ID, TYPE> {
 
