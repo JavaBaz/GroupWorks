@@ -102,10 +102,5 @@ public class Menu {
         SecurityContext.id = resultSet.getId();
         SecurityContext.name = resultSet.getName();
         SecurityContext.username = resultSet.getUsername();
-
-
-        SecurityContext.accessLevel =
-
-
     }
 }
