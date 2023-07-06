@@ -1,36 +1,32 @@
 public class BankAccount implements Runnable {
-    private int balance =0;
-    private String AccountName ;
+    private int balance;
+    private String accountName;
 
-    public BankAccount() {
-    }
 
-    public BankAccount(int balance,String AccountName) {
+    public BankAccount(int balance,String accountName) {
         this.balance = balance;
-        this.AccountName=AccountName;
+        this.accountName =accountName;
     }
-    public int getBalance() {
-        return balance;
-    }
+
     public void depositing  (int money)
     {
         balance+=money;
     }
-    public void withdrawing (int money){
-        balance-=money;
-    }
 
     @Override
     public String toString() {
-        return  +
-                "balance=" + balance +
+        return "BankAccount{" +
+                "balance=" + balance + " is in" +
+                ", AccountName='" + accountName + '\'' +
                 '}';
     }
 
     public void run() {
-        for(int i=0;i<10000;i++)
+        for(int i=0;i<10;i++)
         {
             depositing(10);
+            
+            System.out.println(this.accountName + " in "+ Thread.currentThread().getName() + " in level"+ i);
         }
     }
 }
