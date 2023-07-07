@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Main {
     public static void main(String[] args) {
 
-        HashMap<Integer, String> myTestHashMap = new HashMap<>();
+        ConcurrentHashMap<Integer, String> myTestHashMap = new ConcurrentHashMap<>();
 
         myTestHashMap.put(1,"0");
 

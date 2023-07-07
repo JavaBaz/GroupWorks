@@ -6,9 +6,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class myThread extends Thread{
 
-    HashMap<Integer, String> sharedHashMap;
+    ConcurrentHashMap<Integer, String> sharedHashMap;
 
-    public myThread(HashMap<Integer, String> sharedHashMap) {
+    public myThread(ConcurrentHashMap<Integer, String> sharedHashMap) {
         this.sharedHashMap = sharedHashMap;
     }
 
