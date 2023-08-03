@@ -3,10 +3,11 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
 
-        String number = "1.2  ";
-        Integer value = StringToIntegerConverter.convert(number);
 
+//        Short amin = Short.valueOf("327662");
+//        System.out.println(amin);
 
-        System.out.println(value);
+        Short test = StringToIntegerConverter.convert("327662");
+        System.out.println(test);
     }
 }

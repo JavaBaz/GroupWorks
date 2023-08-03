@@ -5,15 +5,17 @@ import java.util.Scanner;
 public class StringToIntegerConverter {
 
 
-    public  static Integer convert(String entryString) {
+    public static short convert(String entryString) {
 
-        Integer result = null;
+        Short result;
+
         try {
+            result = Short.valueOf(entryString.trim());
 
-            result = Integer.valueOf(entryString.trim());
         } catch (NumberFormatException e) {
-            System.out.println("NumberFormatException -----  forInputString");
+            throw new NumberFormatException(" some Error ");
         }
+
 
         return result;
     }
