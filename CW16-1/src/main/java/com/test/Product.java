@@ -1,3 +1,5 @@
+package com.test;
+
 public class Product {
 	private String title;
 	private double price;
