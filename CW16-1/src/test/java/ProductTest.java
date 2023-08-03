@@ -5,7 +5,7 @@ import com.example.ShoppingCart;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.fail;
+
 
 
 public class ProductTest {
