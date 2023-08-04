@@ -1,10 +1,9 @@
 package org.example.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.sun.istack.NotNull;
+
+import javax.persistence.*;
 
 @Entity
 public class Film {
@@ -12,11 +11,13 @@ public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(nullable = false)
     public String title;
     public String description;
     public int length;
     public String language;
     public int rating;
+    @Column(nullable = false)
     public String director;
 
 
