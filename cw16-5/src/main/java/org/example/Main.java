@@ -18,14 +18,13 @@ public class Main {
         Film film2 = new Film("dastan haye amirAli va saber", "yek film bad",100,"Farsi",1,"Amin");
 
 
-
-
         film2.setId(2L);
         film2.setDirector("Mahdiiiiiii");
-        filmRepository.update(film2);
+//        filmRepository.update(film2);
 
 
 //        System.out.println(filmRepository.findById(1));
 
+        filmRepository.remove(film2);
     }
 }

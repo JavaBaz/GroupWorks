@@ -3,7 +3,6 @@ package org.example.repository.impl;
 import org.example.config.AppEntityManagerFactory;
 import org.example.model.Film;
 import org.example.repository.FilmRepository;
-import org.hibernate.Session;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -21,7 +20,6 @@ public class FilmRepositoryImpl implements FilmRepository {
         entityManager.getTransaction().begin();
         entityManager.persist(film);
         entityManager.getTransaction().commit();
-
 
     }
 
@@ -56,6 +54,8 @@ public class FilmRepositoryImpl implements FilmRepository {
 
     @Override
     public void remove(Film film) {
-
+        entityManager.getTransaction().begin();
+        entityManager.remove(film);
+        entityManager.getTransaction().commit();
     }
 }
