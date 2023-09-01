@@ -1,26 +1,36 @@
 package org.example;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        Animal baseAnimal = new Animal("pishi",5,"Cat");
-        baseAnimal.getClone();
-        Animal testClone1 =  baseAnimal.getClone();
-        testClone1.setName("pish pissshi");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        Dog dog1 = new Dog("hapoo",9,"Dog","poodle");
+//        System.out.print("Enter animal's Name: ");
+//        String name = br.readLine();
+//        System.out.print("\n");
+//
+//
+//        System.out.print("Enter animal's age ");
+//        int age = Integer.parseInt(br.readLine());
+//        System.out.print("\n");
+//
+//
+//        System.out.print("Enter animal's species ");
+//        String species = br.readLine();
+//        System.out.print("\n");
 
-        Dog dog2 = dog1.getClone();
-        dog2.setName("hop hapooo");
 
-        Dog dog3 = dog1.getClone();
-        dog3.setName("sag");
-        dog3.setAge(12);
 
-//        dog3.makeSound();
-//        baseAnimal.makeSound();
+//        Animal a1 = new Animal(name,age,species);
 
-        System.out.println(dog3);
+        System.out.println("--------------------");
+//        a1.showRecord();
+
+        Animal a1 = new Animal();
 
 
     }

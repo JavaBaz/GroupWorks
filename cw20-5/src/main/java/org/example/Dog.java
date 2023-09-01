@@ -2,6 +2,8 @@ package org.example;
 
 import lombok.Data;
 
+import java.io.IOException;
+
 @Data
 
 public class Dog extends Animal {
@@ -30,5 +32,20 @@ public class Dog extends Animal {
                 ", species='" + species + '\'' +
                 ", breed='" + breed + '\'' +
                 '}';
+    }
+
+
+    public Dog() throws IOException {
+        super();
+        System.out.println("   Adding an animal ");
+        System.out.println("---------------------------------------------");
+        System.out.println("name" + "\t" + "age" + "\t" + "species" + "\t" + "breed");
+    }
+
+    public void showRecord() {
+        System.out.println("   Adding an animal ");
+        System.out.println("---------------------------------------------");
+        System.out.println("name" + "\t" + "age" + "\t" + "species" + "\t" + "breed");
+        System.out.println(name + "\t" + age + "\t" + species + "\t" + breed);
     }
 }
