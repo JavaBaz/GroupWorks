@@ -1,6 +1,6 @@
 package org.example.item;
 
-public interface Armor {
-    void equip();
-    void dismiss();
+public abstract class Armor {
+   public abstract void equip();
+   public abstract void dismiss();
 }

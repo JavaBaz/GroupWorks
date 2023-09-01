@@ -2,7 +2,7 @@ package org.example.faction.elf;
 
 import org.example.item.Weapon;
 
-public class ElfWeapon implements Weapon {
+public class ElfWeapon extends Weapon {
     @Override
     public void equip() {
         System.out.println("Elf equipped the Weapon");

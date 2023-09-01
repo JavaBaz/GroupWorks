@@ -2,7 +2,7 @@ package org.example.faction.orc;
 
 import org.example.item.Characters;
 
-public class OrcCharacter  implements Characters {
+public class OrcCharacter  extends Characters {
     @Override
     public void run() {
         System.out.println("Orc is running");

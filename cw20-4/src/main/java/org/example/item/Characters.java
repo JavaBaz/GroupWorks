@@ -1,10 +1,10 @@
 package org.example.item;
 
-public interface Characters {
+public abstract class Characters {
 
-    void run();
-    void jump();
-    void attack();
-    void defend();
+   public abstract void run();
+   public abstract void jump();
+   public abstract void attack();
+   public abstract void defend();
 
 }
