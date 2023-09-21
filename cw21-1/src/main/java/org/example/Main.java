@@ -51,4 +51,11 @@ public class Main {
     }
 
 
+    public void mul(int num1, int num2){
+        logger.info("this is an info log");
+        int result = num1 * num2;
+        System.out.println(result);
+        logger.debug("this is an info log");
+    }
+
 }
