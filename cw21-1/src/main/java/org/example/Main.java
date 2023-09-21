@@ -1,9 +1,15 @@
 package org.example;
 
 
+import org.apache.log4j.Logger;
+
 import java.util.Scanner;
 
 public class Main {
+
+    private static final Logger logger = Logger.getLogger(Main.class);
+
+
 
     public static void main(String[] args) {
         System.out.println(" Welcome to Java Calculator v0.1 \n");
@@ -43,7 +49,6 @@ public class Main {
         scanner.close();
         System.out.println(" Closing Application ");
     }
-
 
 
 }
