@@ -10,10 +10,22 @@
         <servlet-class>com.example.cw231.HelloServlet</servlet-class>
     </servlet>
 
+
+    <servlet>
+        <servlet-name>HelloUser</servlet-name>
+        <servlet-class>com.example.cw231.HelloUser</servlet-class>
+    </servlet>
+
     <!-- Map the Servlet to a URL pattern -->
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/HelloServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>HelloUser</servlet-name>
+        <url-pattern>/HelloUser</url-pattern>
     </servlet-mapping>
 
 </web-app>
